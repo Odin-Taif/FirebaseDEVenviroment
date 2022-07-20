@@ -1,0 +1,30 @@
+// const getData = (callback) => {
+//   onSnapshot(collectionRef, (data) => {
+//     let lists = [];
+//     data.docs.map((item) => {
+//       lists.push({ id: item.id, ...item.data() });
+//     });
+//     callback(lists);
+//     console.log(lists);
+//   });
+// };
+
+// async function getCities(db) {
+//   const citiesCol = collection(db, 'users/ALPzkArG3ZViRQ1ozJYB/lists');
+//   const citySnapshot = await getDocs(citiesCol);
+//   const cityList = citySnapshot.docs.map(doc => doc.data());
+//   console.log(cityList);
+//   return cityList;
+// }
+
+
+
+
+
+
+  componentDidMount() {
+   getData((lists) => {
+      this.setState({lists:this.state.lists}, () => {});
+    });
+
+  }
